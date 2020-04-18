@@ -68,6 +68,12 @@
       "languageVersion": "1.20"
     },
     {
+      "name": "flutter_localizations",
+      "rootUri": "file:///E:/flutter/packages/flutter_localizations",
+      "packageUri": "lib/",
+      "languageVersion": "2.2"
+    },
+    {
       "name": "flutter_test",
       "rootUri": "file:///E:/flutter/packages/flutter_test",
       "packageUri": "lib/",
@@ -96,6 +102,12 @@
       "rootUri": "file:///E:/flutter/.pub-cache/hosted/pub.dartlang.org/image-2.1.4",
       "packageUri": "lib/",
       "languageVersion": "2.0"
+    },
+    {
+      "name": "intl",
+      "rootUri": "file:///E:/flutter/.pub-cache/hosted/pub.dartlang.org/intl-0.16.1",
+      "packageUri": "lib/",
+      "languageVersion": "2.5"
     },
     {
       "name": "matcher",
@@ -200,7 +212,7 @@
       "languageVersion": "2.1"
     }
   ],
-  "generated": "2020-03-07T19:26:15.971818Z",
+  "generated": "2020-04-18T22:38:44.697602Z",
   "generator": "pub",
   "generatorVersion": "2.8.0-dev.9.0.flutter-edd64e6d5c"
 }

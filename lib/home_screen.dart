@@ -1,7 +1,7 @@
 import 'package:ChatBot/utils/const.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_dialogflow/dialogflow_v2.dart';
-
+import 'package:intl/intl.dart';
 import 'chat_messages.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -13,8 +13,12 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
+
+
+
   final List<ChatMessages> messageList = <ChatMessages>[];
   final TextEditingController _textController = new TextEditingController();
+  String localLanguage;
 
   Widget _queryInputWidget(BuildContext context) {
     return Card(
@@ -48,7 +52,7 @@ class _HomeScreenState extends State<HomeScreen> {
     AuthGoogle authGoogle =
     await AuthGoogle(fileJson: jsonPath).build();
     Dialogflow dialogFlow =
-    Dialogflow(authGoogle: authGoogle, language: Language.english);
+    Dialogflow(authGoogle: authGoogle, language: localLanguage);
     AIResponse response = await dialogFlow.detectIntent(query);
     ChatMessages message = ChatMessages(
       text: response.getMessage() ??
@@ -76,6 +80,8 @@ class _HomeScreenState extends State<HomeScreen> {
 
   @override
   Widget build(BuildContext context) {
+    Locale myLocale = Localizations.localeOf(context);
+    localLanguage=myLocale.languageCode;
     return Scaffold(
       appBar: AppBar(
         centerTitle: true,
