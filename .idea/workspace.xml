@@ -6,7 +6,9 @@
     </shared>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="500ebd9b-3086-43c8-911a-97fa6812558c" name="Default Changelist" comment="" />
+    <list default="true" id="500ebd9b-3086-43c8-911a-97fa6812558c" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -35,6 +37,7 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="android.sdk.path" value="$USER_HOME$/AppData/Local/Android/Sdk" />
     <property name="aspect.path.notification.shown" value="true" />
@@ -73,7 +76,8 @@
       <workItem from="1581761284634" duration="1239000" />
       <workItem from="1581797667151" duration="1722000" />
       <workItem from="1582745161508" duration="35000" />
-      <workItem from="1587242440067" duration="413000" />
+      <workItem from="1587242440067" duration="1554000" />
+      <workItem from="1587244268821" duration="109000" />
     </task>
     <task id="LOCAL-00001" summary="init">
       <created>1581762625028</created>
@@ -116,23 +120,24 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <ignored-roots>
-      <path value="$PROJECT_DIR$" />
-    </ignored-roots>
     <MESSAGE value="init" />
     <MESSAGE value="home screen and dialogue flow" />
     <MESSAGE value="json file" />
     <option name="LAST_COMMIT_MESSAGE" value="json file" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="393" y="12" key="CommitChangelistDialog2" timestamp="1587244557730">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state x="393" y="12" key="CommitChangelistDialog2/0.0.1536.834/1920.0.1536.834@0.0.1536.834" timestamp="1587244557730" />
     <state x="549" y="159" key="FileChooserDialogImpl" timestamp="1587242712012">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
     <state x="549" y="159" key="FileChooserDialogImpl/0.0.1536.834/1920.0.1536.834@0.0.1536.834" timestamp="1587242712012" />
-    <state x="277" y="60" key="SettingsEditor" timestamp="1587242853448">
+    <state x="277" y="60" key="SettingsEditor" timestamp="1587244376827">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state x="277" y="60" key="SettingsEditor/0.0.1536.834/1920.0.1536.834@0.0.1536.834" timestamp="1587242853448" />
+    <state x="277" y="60" key="SettingsEditor/0.0.1536.834/1920.0.1536.834@0.0.1536.834" timestamp="1587244376827" />
     <state x="361" y="150" key="Vcs.Push.Dialog.v2" timestamp="1587242801490">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
