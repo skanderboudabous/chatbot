@@ -1,4 +1,7 @@
+import 'package:ChatBot/home_screen.dart';
+import 'package:ChatBot/utils/styles.dart';
 import 'package:flutter/material.dart';
+import 'package:get_it/get_it.dart';
 
 class ChatMessages extends StatelessWidget {
   ChatMessages({this.text, this.name, this.type});
@@ -14,7 +17,7 @@ class ChatMessages extends StatelessWidget {
         child: CircleAvatar(child: Padding(
           padding: const EdgeInsets.all(5),
           child: FlutterLogo(),
-        ), backgroundColor: Colors.grey[200], radius: 12,),
+        ), backgroundColor: Colors.grey[200], radius: 20,),
       ),
       Expanded(
         child: Column(
@@ -23,19 +26,36 @@ class ChatMessages extends StatelessWidget {
 //            Text(this.name,
 //                style: TextStyle(fontWeight: FontWeight.bold)),
             Card(
-              elevation: 3,
-              shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.all(Radius.circular(20))
-              ),
+                elevation: 3,
+                shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.all(Radius.circular(20))
+                ),
                 child: Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: Text(text, ),
+                    padding: const EdgeInsets.all(8.0),
+                    child: buildReponseWidget(text)
                 )
             ),
           ],
         ),
       ),
     ];
+  }
+
+  Widget buildReponseWidget(String result) {
+    if (result.contains("[choices]")) {
+      result = result.substring(10);
+      print(result.split("\n"));
+      List<String> choices = result.split("\n");
+      return Wrap(
+        crossAxisAlignment: WrapCrossAlignment.center,
+        alignment: WrapAlignment.start,
+        children: choices.map((e) =>
+            GestureDetector(onTap: () {
+              GetIt.I<HomeScreenState>().submitQuery(e);
+            }, child: Chip(label: Text(e),))).toList(),);
+    } else {
+      return Text(result);
+    }
   }
 
   List<Widget> userMessage(context) {
@@ -46,7 +66,7 @@ class ChatMessages extends StatelessWidget {
           children: <Widget>[
 //            Text(this.name, style: Theme.of(context).textTheme.subhead),
             Card(
-              color: Colors.green[400],
+                color: appColor,
                 shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.all(Radius.circular(20))
                 ),
@@ -60,7 +80,10 @@ class ChatMessages extends StatelessWidget {
       ),
       Container(
         margin: const EdgeInsets.only(left: 10.0),
-        child: CircleAvatar(child: new Text(this.name[0]),backgroundColor: Colors.grey[200], radius: 12,),
+        child: CircleAvatar(child: new Text(
+          this.name[0], style: TextStyle(color: Colors.lightGreenAccent),),
+          backgroundColor: appColor,
+          radius: 20,),
       ),
     ];
   }

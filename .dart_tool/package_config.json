@@ -80,6 +80,12 @@
       "languageVersion": "2.2"
     },
     {
+      "name": "get_it",
+      "rootUri": "file:///E:/flutter/.pub-cache/hosted/pub.dartlang.org/get_it-4.0.2",
+      "packageUri": "lib/",
+      "languageVersion": "2.0"
+    },
+    {
       "name": "googleapis_auth",
       "rootUri": "file:///E:/flutter/.pub-cache/hosted/pub.dartlang.org/googleapis_auth-0.2.11+1",
       "packageUri": "lib/",
@@ -212,7 +218,7 @@
       "languageVersion": "2.1"
     }
   ],
-  "generated": "2020-04-18T22:38:44.697602Z",
+  "generated": "2020-04-30T15:10:09.842518Z",
   "generator": "pub",
   "generatorVersion": "2.8.0-dev.9.0.flutter-edd64e6d5c"
 }

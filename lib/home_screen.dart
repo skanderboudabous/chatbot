@@ -1,6 +1,8 @@
 import 'package:ChatBot/utils/const.dart';
+import 'package:ChatBot/utils/styles.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_dialogflow/dialogflow_v2.dart';
+import 'package:get_it/get_it.dart';
 import 'package:intl/intl.dart';
 import 'chat_messages.dart';
 
@@ -9,10 +11,10 @@ class HomeScreen extends StatefulWidget {
 
 
   @override
-  _HomeScreenState createState() => new _HomeScreenState();
+  HomeScreenState createState() => new HomeScreenState();
 }
 
-class _HomeScreenState extends State<HomeScreen> {
+class HomeScreenState extends State<HomeScreen> {
 
 
 
@@ -24,24 +26,28 @@ class _HomeScreenState extends State<HomeScreen> {
     return Card(
       margin: EdgeInsets.all(10),
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.all(Radius.circular(30))),
-      child: Padding(
-        padding: const EdgeInsets.only(left:8.0, right: 8),
-        child: Row(
-          children: <Widget>[
-            Flexible(
-              child: TextField(
-                controller: _textController,
-                onSubmitted: _submitQuery,
-                decoration: InputDecoration.collapsed(hintText: "Send a message"),
+      child: Container(
+        decoration: BoxDecoration(borderRadius: BorderRadius.circular(50),color: appColor),
+        child: Padding(
+          padding: const EdgeInsets.only(left:8.0, right: 8),
+          child: Row(
+            children: <Widget>[
+              Flexible(
+                child: TextField(
+                  controller: _textController,
+                  onSubmitted: submitQuery,
+                  style: TextStyle(color: Colors.white),
+                  decoration: InputDecoration.collapsed(hintText: "Send a message",hintStyle: TextStyle(color: Colors.white)),
+                ),
               ),
-            ),
-            Container(
-              margin: EdgeInsets.symmetric(horizontal: 4.0),
-              child: IconButton(
-                  icon: Icon(Icons.send, color: Colors.green[400],),
-                  onPressed: () => _submitQuery(_textController.text)),
-            ),
-          ],
+              Container(
+                margin: EdgeInsets.symmetric(horizontal: 4.0),
+                child: IconButton(
+                    icon: Icon(Icons.send, color: Colors.lightGreenAccent,),
+                    onPressed: () => submitQuery(_textController.text)),
+              ),
+            ],
+          ),
         ),
       ),
     );
@@ -54,9 +60,10 @@ class _HomeScreenState extends State<HomeScreen> {
     Dialogflow dialogFlow =
     Dialogflow(authGoogle: authGoogle, language: localLanguage);
     AIResponse response = await dialogFlow.detectIntent(query);
+    print(response.getListMessage()[0]);
     ChatMessages message = ChatMessages(
       text: response.getMessage() ??
-          CardDialogflow(response.getListMessage()[0]).title,
+          CardDialogflow(response.getListMessage()[0].title),
       name: "Flutter",
       type: false,
     );
@@ -65,17 +72,27 @@ class _HomeScreenState extends State<HomeScreen> {
     });
   }
 
-  void _submitQuery(String text) {
-    _textController.clear();
-    ChatMessages message = new ChatMessages(
-      text: text,
-      name: "User",
-      type: true,
-    );
-    setState(() {
-      messageList.insert(0, message);
-    });
-    agentResponse(text);
+  void submitQuery(String text) {
+    if(text!="") {
+      _textController.clear();
+      ChatMessages message = new ChatMessages(
+        text: text,
+        name: "User",
+        type: true,
+      );
+      setState(() {
+        messageList.insert(0, message);
+      });
+      agentResponse(text);
+    }
+  }
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    if(!GetIt.I.isRegistered<HomeScreenState>())
+      GetIt.I.registerSingleton<HomeScreenState>(this);
+
   }
 
   @override
@@ -85,8 +102,8 @@ class _HomeScreenState extends State<HomeScreen> {
     return Scaffold(
       appBar: AppBar(
         centerTitle: true,
-        title: Text(title, style: TextStyle(color: Colors.green[400]),),
-        backgroundColor: Colors.white,
+        title: Text(TITLE, style: TextStyle(color:Colors.white),),
+        backgroundColor: appColor,
         elevation: 0,
       ),
       body: Column(children: <Widget>[
