@@ -96,8 +96,11 @@ class ChatMessages extends StatelessWidget {
     }
     else if(result.contains("[separator]")) {
       result = result.substring(12);
-      result=result.replaceAll("#", "\n");
-      return new Text(result);
+      List<String> results=result.split("#");
+      return new Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        mainAxisAlignment: MainAxisAlignment.start,
+        children: results.map((e) => new Text("- "+e,textAlign: TextAlign.left,)).toList(),);
     }
     else {
       return Text(result);
