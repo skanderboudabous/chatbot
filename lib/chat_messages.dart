@@ -14,10 +14,14 @@ class ChatMessages extends StatelessWidget {
     return <Widget>[
       Container(
         margin: const EdgeInsets.only(right: 10.0),
-        child: CircleAvatar(child: Padding(
-          padding: const EdgeInsets.all(5),
-          child: FlutterLogo(),
-        ), backgroundColor: Colors.grey[200], radius: 20,),
+        child: CircleAvatar(
+          child: Padding(
+            padding: const EdgeInsets.all(5),
+            child: FlutterLogo(),
+          ),
+          backgroundColor: Colors.grey[200],
+          radius: 20,
+        ),
       ),
       Expanded(
         child: Column(
@@ -28,13 +32,10 @@ class ChatMessages extends StatelessWidget {
             Card(
                 elevation: 3,
                 shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.all(Radius.circular(20))
-                ),
+                    borderRadius: BorderRadius.all(Radius.circular(20))),
                 child: Padding(
                     padding: const EdgeInsets.all(8.0),
-                    child: buildReponseWidget(text)
-                )
-            ),
+                    child: buildReponseWidget(text))),
           ],
         ),
       ),
@@ -47,13 +48,58 @@ class ChatMessages extends StatelessWidget {
       print(result.split("\n"));
       List<String> choices = result.split("\n");
       return Wrap(
+        spacing: 5,
         crossAxisAlignment: WrapCrossAlignment.center,
-        alignment: WrapAlignment.start,
-        children: choices.map((e) =>
-            GestureDetector(onTap: () {
-              GetIt.I<HomeScreenState>().submitQuery(e);
-            }, child: Chip(label: Text(e),))).toList(),);
-    } else {
+        alignment: WrapAlignment.center,
+        children: choices
+            .map((e) => GestureDetector(
+                onTap: () {
+                  GetIt.I<HomeScreenState>().submitQuery(e);
+                },
+                child: Chip(
+                  backgroundColor: appColor,
+                  label: Text(
+                    e,
+                    style: TextStyle(color: Colors.white),
+                  ),
+                )))
+            .toList(),
+      );
+    }
+    if (result.contains('[next]')) {
+      List<String> results = result.split("[next]");
+      String description = results[0];
+      List<String> choices = results[1].split("\n").sublist(1);
+      return new Column(
+        children: <Widget>[
+          Text(description),
+          Wrap(
+            spacing: 5,
+            crossAxisAlignment: WrapCrossAlignment.center,
+            alignment: WrapAlignment.center,
+            children: choices
+                .map((e) => GestureDetector(
+                    onTap: () {
+                      GetIt.I<HomeScreenState>().submitQuery(e);
+                    },
+                    child: Chip(
+                      backgroundColor: appColor,
+                      label: Text(
+                        e,
+                        style: TextStyle(color: Colors.white),
+                      ),
+                    )))
+                .toList(),
+          )
+        ],
+      );
+    }
+    else if(result.contains("[separator]")) {
+      result = result.substring(12);
+      result=result.replaceAll("#", "\n");
+      return new Text(result);
+    }
+    else {
       return Text(result);
     }
   }
@@ -68,22 +114,27 @@ class ChatMessages extends StatelessWidget {
             Card(
                 color: appColor,
                 shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.all(Radius.circular(20))
-                ),
+                    borderRadius: BorderRadius.all(Radius.circular(20))),
                 child: Padding(
                   padding: const EdgeInsets.all(8.0),
-                  child: Text(text, style: TextStyle(color: Colors.white),),
-                )
-            ),
+                  child: Text(
+                    text,
+                    style: TextStyle(color: Colors.white),
+                  ),
+                )),
           ],
         ),
       ),
       Container(
         margin: const EdgeInsets.only(left: 10.0),
-        child: CircleAvatar(child: new Text(
-          this.name[0], style: TextStyle(color: Colors.lightGreenAccent),),
+        child: CircleAvatar(
+          child: new Text(
+            this.name[0],
+            style: TextStyle(color: Colors.lightGreenAccent),
+          ),
           backgroundColor: appColor,
-          radius: 20,),
+          radius: 20,
+        ),
       ),
     ];
   }

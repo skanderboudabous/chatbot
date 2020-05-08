@@ -20,6 +20,7 @@ class HomeScreenState extends State<HomeScreen> {
 
   final List<ChatMessages> messageList = <ChatMessages>[];
   final TextEditingController _textController = new TextEditingController();
+  ScrollController _scrollController = new ScrollController();
   String localLanguage;
 
   Widget _queryInputWidget(BuildContext context) {
@@ -74,6 +75,11 @@ class HomeScreenState extends State<HomeScreen> {
 
   void submitQuery(String text) {
     if(text!="") {
+      _scrollController.animateTo(
+        0.0,
+        curve: Curves.easeOut,
+        duration: const Duration(milliseconds: 300),
+      );
       _textController.clear();
       ChatMessages message = new ChatMessages(
         text: text,
@@ -109,6 +115,7 @@ class HomeScreenState extends State<HomeScreen> {
       body: Column(children: <Widget>[
         Flexible(
             child: ListView.builder(
+              controller: _scrollController,
               padding: EdgeInsets.all(8.0),
               reverse: true, //To keep the latest messages at the bottom
               itemBuilder: (_, int index) => messageList[index],
