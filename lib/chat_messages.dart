@@ -43,6 +43,7 @@ class ChatMessages extends StatelessWidget {
   }
 
   Widget buildReponseWidget(String result) {
+    print(result);
     if (result.contains("[choices]")) {
       result = result.substring(10);
       print(result.split("\n"));
@@ -72,7 +73,16 @@ class ChatMessages extends StatelessWidget {
       List<String> choices = results[1].split("\n").sublist(1);
       return new Column(
         children: <Widget>[
-          Text(description),
+          description.contains("[line]")?
+       Column(
+        children: <Widget>[
+          Text(description.split("[line]")[0],textAlign: TextAlign.left,),
+          new Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            mainAxisAlignment: MainAxisAlignment.start,
+            children: description.split("[line]")[1].split("#").sublist(1).map((e) => new Text("- "+e,textAlign: TextAlign.left,)).toList(),),
+        ],
+      ) :Text(description),
           Wrap(
             spacing: 5,
             crossAxisAlignment: WrapCrossAlignment.center,
@@ -94,6 +104,20 @@ class ChatMessages extends StatelessWidget {
         ],
       );
     }
+    else if(result.contains("[line]"))
+      {
+        List<String> results=result.split("[line]");
+        List<String> results2=results[1].split("#");
+        return Column(
+          children: <Widget>[
+            Text(results[0],textAlign: TextAlign.left,),
+            new Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              mainAxisAlignment: MainAxisAlignment.start,
+              children: results2.map((e) => new Text("- "+e,textAlign: TextAlign.left,)).toList(),),
+          ],
+        );
+      }
     else if(result.contains("[separator]")) {
       result = result.substring(12);
       List<String> results=result.split("#");
