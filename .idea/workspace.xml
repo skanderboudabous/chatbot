@@ -10,13 +10,9 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="500ebd9b-3086-43c8-911a-97fa6812558c" name="Default Changelist" comment="fixed separator">
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Dart_Packages.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Dart_Packages.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Dart_SDK.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Dart_SDK.xml" afterDir="false" />
+    <list default="true" id="500ebd9b-3086-43c8-911a-97fa6812558c" name="Default Changelist" comment="fixed &quot; ' &quot;">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.packages" beforeDir="false" afterPath="$PROJECT_DIR$/.packages" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/home_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/home_screen.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pubspec.lock" beforeDir="false" afterPath="$PROJECT_DIR$/pubspec.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/android/app/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/android/app/src/main/AndroidManifest.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -96,7 +92,7 @@
       <workItem from="1587248040254" duration="4916000" />
       <workItem from="1587934508311" duration="413000" />
       <workItem from="1588970144011" duration="2598000" />
-      <workItem from="1589148077214" duration="2854000" />
+      <workItem from="1589148077214" duration="3614000" />
     </task>
     <task id="LOCAL-00001" summary="init">
       <created>1581762625028</created>
@@ -119,7 +115,14 @@
       <option name="project" value="LOCAL" />
       <updated>1583614968092</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="fixed &quot; ' &quot;">
+      <created>1589151159264</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1589151159264</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -141,7 +144,8 @@
     <MESSAGE value="init" />
     <MESSAGE value="home screen and dialogue flow" />
     <MESSAGE value="json file" />
-    <option name="LAST_COMMIT_MESSAGE" value="json file" />
+    <MESSAGE value="fixed &quot; ' &quot;" />
+    <option name="LAST_COMMIT_MESSAGE" value="fixed &quot; ' &quot;" />
   </component>
   <component name="WindowStateProjectService">
     <state x="137" y="24" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1587247870767">
@@ -166,26 +170,26 @@
     <state x="488" y="141" key="FileChooserDialogImpl/0.0.1366.738@0.0.1366.738" timestamp="1587248130609" />
     <state x="549" y="159" key="FileChooserDialogImpl/0.0.1536.834/1920.0.1536.834@0.0.1536.834" timestamp="1587242712012" />
     <state x="549" y="159" key="FileChooserDialogImpl/0.0.1536.834/1920.145.1536.834@0.0.1536.834" timestamp="1589131150916" />
-    <state width="1493" height="213" key="GridCell.Tab.0.bottom" timestamp="1589150468522">
+    <state width="1493" height="213" key="GridCell.Tab.0.bottom" timestamp="1589151393689">
       <screen x="1920" y="145" width="1536" height="834" />
     </state>
     <state width="1323" height="182" key="GridCell.Tab.0.bottom/0.0.1366.738@0.0.1366.738" timestamp="1588980033935" />
-    <state width="1493" height="213" key="GridCell.Tab.0.bottom/0.0.1536.834/1920.145.1536.834@1920.145.1536.834" timestamp="1589150468522" />
-    <state width="1493" height="213" key="GridCell.Tab.0.center" timestamp="1589150468522">
+    <state width="1493" height="213" key="GridCell.Tab.0.bottom/0.0.1536.834/1920.145.1536.834@1920.145.1536.834" timestamp="1589151393689" />
+    <state width="1493" height="213" key="GridCell.Tab.0.center" timestamp="1589151393689">
       <screen x="1920" y="145" width="1536" height="834" />
     </state>
     <state width="1323" height="182" key="GridCell.Tab.0.center/0.0.1366.738@0.0.1366.738" timestamp="1588980033934" />
-    <state width="1493" height="213" key="GridCell.Tab.0.center/0.0.1536.834/1920.145.1536.834@1920.145.1536.834" timestamp="1589150468522" />
-    <state width="1493" height="213" key="GridCell.Tab.0.left" timestamp="1589150468522">
+    <state width="1493" height="213" key="GridCell.Tab.0.center/0.0.1536.834/1920.145.1536.834@1920.145.1536.834" timestamp="1589151393689" />
+    <state width="1493" height="213" key="GridCell.Tab.0.left" timestamp="1589151393689">
       <screen x="1920" y="145" width="1536" height="834" />
     </state>
     <state width="1323" height="182" key="GridCell.Tab.0.left/0.0.1366.738@0.0.1366.738" timestamp="1588980033933" />
-    <state width="1493" height="213" key="GridCell.Tab.0.left/0.0.1536.834/1920.145.1536.834@1920.145.1536.834" timestamp="1589150468522" />
-    <state width="1493" height="213" key="GridCell.Tab.0.right" timestamp="1589150468522">
+    <state width="1493" height="213" key="GridCell.Tab.0.left/0.0.1536.834/1920.145.1536.834@1920.145.1536.834" timestamp="1589151393689" />
+    <state width="1493" height="213" key="GridCell.Tab.0.right" timestamp="1589151393689">
       <screen x="1920" y="145" width="1536" height="834" />
     </state>
     <state width="1323" height="182" key="GridCell.Tab.0.right/0.0.1366.738@0.0.1366.738" timestamp="1588980033934" />
-    <state width="1493" height="213" key="GridCell.Tab.0.right/0.0.1536.834/1920.145.1536.834@1920.145.1536.834" timestamp="1589150468522" />
+    <state width="1493" height="213" key="GridCell.Tab.0.right/0.0.1536.834/1920.145.1536.834@1920.145.1536.834" timestamp="1589151393689" />
     <state x="263" y="104" key="IDE.errors.dialog" timestamp="1587254157951">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
@@ -200,10 +204,11 @@
     <state x="246" y="0" key="SettingsEditor/0.0.1366.738@0.0.1366.738" timestamp="1587248136460" />
     <state x="277" y="60" key="SettingsEditor/0.0.1536.834/1920.0.1536.834@0.0.1536.834" timestamp="1587244376827" />
     <state x="277" y="0" key="SettingsEditor/0.0.1536.834/1920.145.1536.834@0.0.1536.834" timestamp="1589131157085" />
-    <state x="361" y="150" key="Vcs.Push.Dialog.v2" timestamp="1587242801490">
-      <screen x="0" y="0" width="1536" height="834" />
+    <state x="2281" y="295" key="Vcs.Push.Dialog.v2" timestamp="1589151161180">
+      <screen x="1920" y="145" width="1536" height="834" />
     </state>
     <state x="361" y="150" key="Vcs.Push.Dialog.v2/0.0.1536.834/1920.0.1536.834@0.0.1536.834" timestamp="1587242801490" />
+    <state x="2281" y="295" key="Vcs.Push.Dialog.v2/0.0.1536.834/1920.145.1536.834@1920.145.1536.834" timestamp="1589151161180" />
     <state x="2013" y="238" width="1350" height="648" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1589150932814">
       <screen x="1920" y="145" width="1536" height="834" />
     </state>
