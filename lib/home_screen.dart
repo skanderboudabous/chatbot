@@ -1,3 +1,5 @@
+import 'dart:convert';
+
 import 'package:ChatBot/utils/const.dart';
 import 'package:ChatBot/utils/styles.dart';
 import 'package:flutter/material.dart';
@@ -54,14 +56,15 @@ class HomeScreenState extends State<HomeScreen> {
     );
   }
 
-  void agentResponse(query) async {
+  void agentResponse(String query) async {
+    query=query.replaceAll("'", "_");
     _textController.clear();
     AuthGoogle authGoogle =
     await AuthGoogle(fileJson: jsonPath).build();
     Dialogflow dialogFlow =
     Dialogflow(authGoogle: authGoogle, language: localLanguage);
+    print(localLanguage);
     AIResponse response = await dialogFlow.detectIntent(query);
-    print(response.getListMessage()[0]);
     ChatMessages message = ChatMessages(
       text: response.getMessage() ??
           CardDialogflow(response.getListMessage()[0].title),
