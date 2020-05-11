@@ -5,16 +5,12 @@
       <config />
     </shared>
   </component>
-  <component name="BranchesTreeState">
-    <expand />
-    <select />
-  </component>
   <component name="ChangeListManager">
-    <list default="true" id="500ebd9b-3086-43c8-911a-97fa6812558c" name="Default Changelist" comment="added [line] inside [next]">
-      <change afterPath="$PROJECT_DIR$/assets/logo.png" afterDir="false" />
+    <list default="true" id="500ebd9b-3086-43c8-911a-97fa6812558c" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/assets/login_back.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Dart_Packages.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Dart_Packages.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.packages" beforeDir="false" afterPath="$PROJECT_DIR$/.packages" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/chat_messages.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/chat_messages.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/home_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/home_screen.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pubspec.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/pubspec.yaml" afterDir="false" />
     </list>
@@ -40,11 +36,10 @@
     <option name="UPDATE_TYPE" value="REBASE" />
   </component>
   <component name="ProjectId" id="1XrICLqzfvTxMNzueet0b1wpFNN" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
-    <ConfirmationsSetting value="2" id="Add" />
-  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
@@ -54,7 +49,6 @@
     <property name="android.sdk.path" value="$USER_HOME$/AppData/Local/Android/Sdk" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="dart.analysis.tool.window.force.activate" value="false" />
-    <property name="dart.analysis.tool.window.visible" value="false" />
     <property name="io.flutter.reload.alreadyRun" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/assets" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
@@ -67,7 +61,7 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="E:\FlutterProjects\ChatBot\assets" />
+      <recent name="D:\2emeGLID\chatbot\assets" />
       <recent name="D:\2emeGLID\chatbot\android\app\src\main\res" />
       <recent name="E:\FlutterProjects\ChatBot\lib" />
     </key>
@@ -97,7 +91,7 @@
       <workItem from="1587248040254" duration="4916000" />
       <workItem from="1587934508311" duration="413000" />
       <workItem from="1588970144011" duration="2598000" />
-      <workItem from="1589148077214" duration="7152000" />
+      <workItem from="1589149000982" duration="3637000" />
     </task>
     <task id="LOCAL-00001" summary="init">
       <created>1581762625028</created>
@@ -120,63 +114,36 @@
       <option name="project" value="LOCAL" />
       <updated>1583614968092</updated>
     </task>
-    <task id="LOCAL-00004" summary="fixed &quot; ' &quot;">
-      <created>1589151159264</created>
-      <option name="number" value="00004" />
-      <option name="presentableId" value="LOCAL-00004" />
-      <option name="project" value="LOCAL" />
-      <updated>1589151159264</updated>
-    </task>
-    <task id="LOCAL-00005" summary="changed app name in android manifest">
-      <created>1589151715147</created>
-      <option name="number" value="00005" />
-      <option name="presentableId" value="LOCAL-00005" />
-      <option name="project" value="LOCAL" />
-      <updated>1589151715147</updated>
-    </task>
-    <task id="LOCAL-00006" summary="added [line] inside [next]">
-      <created>1589153594190</created>
-      <option name="number" value="00006" />
-      <option name="presentableId" value="LOCAL-00006" />
-      <option name="project" value="LOCAL" />
-      <updated>1589153594190</updated>
-    </task>
-    <option name="localTasksCounter" value="7" />
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="2" />
+    <option name="version" value="1" />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
           </value>
         </entry>
       </map>
     </option>
-    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="init" />
     <MESSAGE value="home screen and dialogue flow" />
     <MESSAGE value="json file" />
-    <MESSAGE value="fixed &quot; ' &quot;" />
-    <MESSAGE value="changed app name in android manifest" />
-    <MESSAGE value="added [line] inside [next]" />
-    <option name="LAST_COMMIT_MESSAGE" value="added [line] inside [next]" />
+    <option name="LAST_COMMIT_MESSAGE" value="json file" />
   </component>
   <component name="WindowStateProjectService">
     <state x="137" y="24" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1587247870767">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
     <state x="137" y="24" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1366.738@0.0.1366.738" timestamp="1587247870767" />
-    <state x="2419" y="309" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1589150155458">
-      <screen x="1920" y="145" width="1536" height="834" />
-    </state>
-    <state x="2419" y="309" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1536.834/1920.145.1536.834@1920.145.1536.834" timestamp="1589150155458" />
     <state x="375" y="90" key="#main.dart" timestamp="1587247615387">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
@@ -185,62 +152,47 @@
       <screen x="0" y="0" width="1536" height="834" />
     </state>
     <state x="393" y="12" key="CommitChangelistDialog2/0.0.1536.834/1920.0.1536.834@0.0.1536.834" timestamp="1587244557730" />
-    <state x="549" y="159" key="FileChooserDialogImpl" timestamp="1589131150916">
-      <screen x="0" y="0" width="1536" height="834" />
+    <state x="488" y="141" key="FileChooserDialogImpl" timestamp="1587248130609">
+      <screen x="0" y="0" width="1366" height="738" />
     </state>
     <state x="488" y="141" key="FileChooserDialogImpl/0.0.1366.738@0.0.1366.738" timestamp="1587248130609" />
     <state x="549" y="159" key="FileChooserDialogImpl/0.0.1536.834/1920.0.1536.834@0.0.1536.834" timestamp="1587242712012" />
-    <state x="549" y="159" key="FileChooserDialogImpl/0.0.1536.834/1920.145.1536.834@0.0.1536.834" timestamp="1589131150916" />
-    <state width="1493" height="213" key="GridCell.Tab.0.bottom" timestamp="1589154630778">
-      <screen x="1920" y="145" width="1536" height="834" />
+    <state width="1323" height="182" key="GridCell.Tab.0.bottom" timestamp="1589156173588">
+      <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state width="1323" height="182" key="GridCell.Tab.0.bottom/0.0.1366.738@0.0.1366.738" timestamp="1588980033935" />
-    <state width="1493" height="213" key="GridCell.Tab.0.bottom/0.0.1536.834/1920.145.1536.834@1920.145.1536.834" timestamp="1589154630778" />
-    <state width="1493" height="213" key="GridCell.Tab.0.center" timestamp="1589154630778">
-      <screen x="1920" y="145" width="1536" height="834" />
+    <state width="1323" height="182" key="GridCell.Tab.0.bottom/0.0.1366.738@0.0.1366.738" timestamp="1589156173588" />
+    <state width="1323" height="182" key="GridCell.Tab.0.center" timestamp="1589156173588">
+      <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state width="1323" height="182" key="GridCell.Tab.0.center/0.0.1366.738@0.0.1366.738" timestamp="1588980033934" />
-    <state width="1493" height="213" key="GridCell.Tab.0.center/0.0.1536.834/1920.145.1536.834@1920.145.1536.834" timestamp="1589154630778" />
-    <state width="1493" height="213" key="GridCell.Tab.0.left" timestamp="1589154630778">
-      <screen x="1920" y="145" width="1536" height="834" />
+    <state width="1323" height="182" key="GridCell.Tab.0.center/0.0.1366.738@0.0.1366.738" timestamp="1589156173588" />
+    <state width="1323" height="182" key="GridCell.Tab.0.left" timestamp="1589156173588">
+      <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state width="1323" height="182" key="GridCell.Tab.0.left/0.0.1366.738@0.0.1366.738" timestamp="1588980033933" />
-    <state width="1493" height="213" key="GridCell.Tab.0.left/0.0.1536.834/1920.145.1536.834@1920.145.1536.834" timestamp="1589154630778" />
-    <state width="1493" height="213" key="GridCell.Tab.0.right" timestamp="1589154630778">
-      <screen x="1920" y="145" width="1536" height="834" />
+    <state width="1323" height="182" key="GridCell.Tab.0.left/0.0.1366.738@0.0.1366.738" timestamp="1589156173588" />
+    <state width="1323" height="182" key="GridCell.Tab.0.right" timestamp="1589156173588">
+      <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state width="1323" height="182" key="GridCell.Tab.0.right/0.0.1366.738@0.0.1366.738" timestamp="1588980033934" />
-    <state width="1493" height="213" key="GridCell.Tab.0.right/0.0.1536.834/1920.145.1536.834@1920.145.1536.834" timestamp="1589154630778" />
+    <state width="1323" height="182" key="GridCell.Tab.0.right/0.0.1366.738@0.0.1366.738" timestamp="1589156173588" />
     <state x="263" y="104" key="IDE.errors.dialog" timestamp="1587254157951">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
     <state x="263" y="104" key="IDE.errors.dialog/0.0.1366.738@0.0.1366.738" timestamp="1587254157951" />
-    <state x="395" y="85" key="MultipleFileMergeDialog" timestamp="1588971017892">
+    <state x="395" y="85" key="MultipleFileMergeDialog" timestamp="1589155644385">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state x="395" y="85" key="MultipleFileMergeDialog/0.0.1366.738@0.0.1366.738" timestamp="1588971017892" />
-    <state x="277" y="0" key="SettingsEditor" timestamp="1589131157085">
-      <screen x="0" y="0" width="1536" height="834" />
+    <state x="395" y="85" key="MultipleFileMergeDialog/0.0.1366.738@0.0.1366.738" timestamp="1589155644385" />
+    <state x="246" y="0" key="SettingsEditor" timestamp="1587248136460">
+      <screen x="0" y="0" width="1366" height="738" />
     </state>
     <state x="246" y="0" key="SettingsEditor/0.0.1366.738@0.0.1366.738" timestamp="1587248136460" />
     <state x="277" y="60" key="SettingsEditor/0.0.1536.834/1920.0.1536.834@0.0.1536.834" timestamp="1587244376827" />
-    <state x="277" y="0" key="SettingsEditor/0.0.1536.834/1920.145.1536.834@0.0.1536.834" timestamp="1589131157085" />
-    <state x="2281" y="295" key="Vcs.Push.Dialog.v2" timestamp="1589153601456">
-      <screen x="1920" y="145" width="1536" height="834" />
-    </state>
-    <state x="361" y="150" key="Vcs.Push.Dialog.v2/0.0.1536.834/1920.0.1536.834@0.0.1536.834" timestamp="1587242801490" />
-    <state x="2281" y="295" key="Vcs.Push.Dialog.v2/0.0.1536.834/1920.145.1536.834@1920.145.1536.834" timestamp="1589153601456" />
-    <state x="2013" y="238" width="1350" height="648" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1589150932814">
-      <screen x="1920" y="145" width="1536" height="834" />
-    </state>
-    <state x="2013" y="238" width="1350" height="648" key="com.intellij.history.integration.ui.views.FileHistoryDialog/0.0.1536.834/1920.145.1536.834@1920.145.1536.834" timestamp="1589150932814" />
-    <state x="492" y="286" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1588978114125">
-      <screen x="0" y="0" width="1366" height="738" />
-    </state>
-    <state x="492" y="286" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1366.738@0.0.1366.738" timestamp="1588978114125" />
-    <state x="209" y="101" width="1118" height="656" key="new project wizard" timestamp="1589132125058">
+    <state x="361" y="150" key="Vcs.Push.Dialog.v2" timestamp="1587242801490">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state x="209" y="101" width="1118" height="656" key="new project wizard/0.0.1536.834/1920.145.1536.834@0.0.1536.834" timestamp="1589132125058" />
+    <state x="361" y="150" key="Vcs.Push.Dialog.v2/0.0.1536.834/1920.0.1536.834@0.0.1536.834" timestamp="1587242801490" />
+    <state x="492" y="286" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1589155633235">
+      <screen x="0" y="0" width="1366" height="738" />
+    </state>
+    <state x="492" y="286" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1366.738@0.0.1366.738" timestamp="1589155633235" />
   </component>
 </project>

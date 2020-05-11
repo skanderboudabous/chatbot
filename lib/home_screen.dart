@@ -116,18 +116,30 @@ class HomeScreenState extends State<HomeScreen> {
         backgroundColor: appColor,
         elevation: 0,
       ),
-      body: Column(children: <Widget>[
-        Flexible(
-            child: ListView.builder(
-          controller: _scrollController,
-          padding: EdgeInsets.all(8.0),
-          reverse: true,
-          //To keep the latest messages at the bottom
-          itemBuilder: (_, int index) => messageList[index],
-          itemCount: messageList.length,
-        )),
-        _queryInputWidget(context),
-      ]),
+      body: Stack(
+        alignment: Alignment.topCenter,
+        fit: StackFit.expand,
+        children: <Widget>[
+          new Image(
+            image: new AssetImage("assets/login_back.jpg"),
+            fit: BoxFit.cover,
+            colorBlendMode: BlendMode.darken,
+            color: Colors.black87,
+          ),
+          Column(children: <Widget>[
+            new Flexible(
+                child: ListView.builder(
+              controller: _scrollController,
+              padding: EdgeInsets.all(8.0),
+              reverse: true,
+              //To keep the latest messages at the bottom
+              itemBuilder: (_, int index) => messageList[index],
+              itemCount: messageList.length,
+            )),
+            _queryInputWidget(context),
+          ]),
+        ],
+      ),
     );
   }
 }
