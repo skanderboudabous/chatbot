@@ -14,13 +14,9 @@ class ChatMessages extends StatelessWidget {
     return <Widget>[
       Container(
         margin: const EdgeInsets.only(right: 10.0),
-        child: CircleAvatar(
-          child: Padding(
-            padding: const EdgeInsets.all(5),
-            child: FlutterLogo(),
-          ),
-          backgroundColor: Colors.grey[200],
-          radius: 20,
+        child: Padding(
+          padding: const EdgeInsets.all(5),
+          child: Image.asset("assets/logo.png",width: 40,height: 40,),
         ),
       ),
       Expanded(
@@ -137,7 +133,6 @@ class ChatMessages extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.end,
           children: <Widget>[
-//            Text(this.name, style: Theme.of(context).textTheme.subhead),
             Card(
                 color: appColor,
                 shape: RoundedRectangleBorder(
@@ -155,10 +150,7 @@ class ChatMessages extends StatelessWidget {
       Container(
         margin: const EdgeInsets.only(left: 10.0),
         child: CircleAvatar(
-          child: new Text(
-            this.name[0],
-            style: TextStyle(color: Colors.lightGreenAccent),
-          ),
+          child: Icon(Icons.account_circle,size: 30,),
           backgroundColor: appColor,
           radius: 20,
         ),

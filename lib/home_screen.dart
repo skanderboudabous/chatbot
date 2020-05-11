@@ -11,15 +11,11 @@ import 'chat_messages.dart';
 class HomeScreen extends StatefulWidget {
   HomeScreen({Key key}) : super(key: key);
 
-
   @override
   HomeScreenState createState() => new HomeScreenState();
 }
 
 class HomeScreenState extends State<HomeScreen> {
-
-
-
   final List<ChatMessages> messageList = <ChatMessages>[];
   final TextEditingController _textController = new TextEditingController();
   ScrollController _scrollController = new ScrollController();
@@ -28,11 +24,13 @@ class HomeScreenState extends State<HomeScreen> {
   Widget _queryInputWidget(BuildContext context) {
     return Card(
       margin: EdgeInsets.all(10),
-      shape: RoundedRectangleBorder(borderRadius: BorderRadius.all(Radius.circular(30))),
+      shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.all(Radius.circular(30))),
       child: Container(
-        decoration: BoxDecoration(borderRadius: BorderRadius.circular(50),color: appColor),
+        decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(50), color: appColor),
         child: Padding(
-          padding: const EdgeInsets.only(left:8.0, right: 8),
+          padding: const EdgeInsets.only(left: 8.0, right: 8),
           child: Row(
             children: <Widget>[
               Flexible(
@@ -40,13 +38,18 @@ class HomeScreenState extends State<HomeScreen> {
                   controller: _textController,
                   onSubmitted: submitQuery,
                   style: TextStyle(color: Colors.white),
-                  decoration: InputDecoration.collapsed(hintText: "Send a message",hintStyle: TextStyle(color: Colors.white)),
+                  decoration: InputDecoration.collapsed(
+                      hintText: "Send a message",
+                      hintStyle: TextStyle(color: Colors.white)),
                 ),
               ),
               Container(
                 margin: EdgeInsets.symmetric(horizontal: 4.0),
                 child: IconButton(
-                    icon: Icon(Icons.send, color: Colors.lightGreenAccent,),
+                    icon: Icon(
+                      Icons.send,
+                      color: Colors.lightGreenAccent,
+                    ),
                     onPressed: () => submitQuery(_textController.text)),
               ),
             ],
@@ -57,13 +60,11 @@ class HomeScreenState extends State<HomeScreen> {
   }
 
   void agentResponse(String query) async {
-    query=query.replaceAll("'", "_");
+    query = query.replaceAll("'", "_");
     _textController.clear();
-    AuthGoogle authGoogle =
-    await AuthGoogle(fileJson: jsonPath).build();
+    AuthGoogle authGoogle = await AuthGoogle(fileJson: jsonPath).build();
     Dialogflow dialogFlow =
-    Dialogflow(authGoogle: authGoogle, language: localLanguage);
-    print(localLanguage);
+        Dialogflow(authGoogle: authGoogle, language: localLanguage);
     AIResponse response = await dialogFlow.detectIntent(query);
     ChatMessages message = ChatMessages(
       text: response.getMessage() ??
@@ -77,7 +78,7 @@ class HomeScreenState extends State<HomeScreen> {
   }
 
   void submitQuery(String text) {
-    if(text!="") {
+    if (text != "") {
       _scrollController.animateTo(
         0.0,
         curve: Curves.easeOut,
@@ -95,35 +96,36 @@ class HomeScreenState extends State<HomeScreen> {
       agentResponse(text);
     }
   }
+
   @override
   void initState() {
     // TODO: implement initState
     super.initState();
-    if(!GetIt.I.isRegistered<HomeScreenState>())
+    if (!GetIt.I.isRegistered<HomeScreenState>())
       GetIt.I.registerSingleton<HomeScreenState>(this);
-
   }
 
   @override
   Widget build(BuildContext context) {
     Locale myLocale = Localizations.localeOf(context);
-    localLanguage=myLocale.languageCode;
+    localLanguage = myLocale.languageCode;
     return Scaffold(
       appBar: AppBar(
         centerTitle: true,
-        title: Text(TITLE, style: TextStyle(color:Colors.white),),
+        title: Text(TITLE, style: TextStyle(color: Colors.white)),
         backgroundColor: appColor,
         elevation: 0,
       ),
       body: Column(children: <Widget>[
         Flexible(
             child: ListView.builder(
-              controller: _scrollController,
-              padding: EdgeInsets.all(8.0),
-              reverse: true, //To keep the latest messages at the bottom
-              itemBuilder: (_, int index) => messageList[index],
-              itemCount: messageList.length,
-            )),
+          controller: _scrollController,
+          padding: EdgeInsets.all(8.0),
+          reverse: true,
+          //To keep the latest messages at the bottom
+          itemBuilder: (_, int index) => messageList[index],
+          itemCount: messageList.length,
+        )),
         _queryInputWidget(context),
       ]),
     );
