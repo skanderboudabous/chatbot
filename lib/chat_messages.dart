@@ -1,5 +1,7 @@
 import 'package:ChatBot/home_screen.dart';
 import 'package:ChatBot/utils/styles.dart';
+import 'package:cached_network_image/cached_network_image.dart';
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:get_it/get_it.dart';
 
@@ -16,7 +18,11 @@ class ChatMessages extends StatelessWidget {
         margin: const EdgeInsets.only(right: 10.0),
         child: Padding(
           padding: const EdgeInsets.all(5),
-          child: Image.asset("assets/logo.png",width: 40,height: 40,),
+          child: Image.asset(
+            "assets/logo.png",
+            width: 40,
+            height: 40,
+          ),
         ),
       ),
       Expanded(
@@ -31,15 +37,14 @@ class ChatMessages extends StatelessWidget {
                     borderRadius: BorderRadius.all(Radius.circular(20))),
                 child: Padding(
                     padding: const EdgeInsets.all(8.0),
-                    child: buildReponseWidget(text))),
+                    child: buildReponseWidget(text, context))),
           ],
         ),
       ),
     ];
   }
 
-  Widget buildReponseWidget(String result) {
-    print(result);
+  Widget buildReponseWidget(String result, context) {
     if (result.contains("[choices]")) {
       result = result.substring(10);
       print(result.split("\n"));
@@ -62,23 +67,22 @@ class ChatMessages extends StatelessWidget {
                 )))
             .toList(),
       );
-    }
-    if (result.contains('[next]')) {
-      List<String> results = result.split("[next]");
-      String description = results[0];
-      List<String> choices = results[1].split("\n").sublist(1);
-      return new Column(
+    } else if (result.contains("[image]")) {
+      String imgUrl = result.split("[image]")[1].split("\n")[1];
+      List<String> choices = result.split("[next]")[1].split("\n").sublist(1);
+      return Column(
         children: <Widget>[
-          description.contains("[line]")?
-       Column(
-        children: <Widget>[
-          Text(description.split("[line]")[0],textAlign: TextAlign.left,),
-          new Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            mainAxisAlignment: MainAxisAlignment.start,
-            children: description.split("[line]")[1].split("#").sublist(1).map((e) => new Text("- "+e,textAlign: TextAlign.left,)).toList(),),
-        ],
-      ) :Text(description),
+          GestureDetector(
+            onTap: () => {openDialogue(context, imgUrl)},
+            child: CachedNetworkImage(
+              imageUrl: imgUrl,
+              placeholder: (context, url) => CircularProgressIndicator(),
+              errorWidget: (context, url, error) => Icon(Icons.error),
+            ),
+          ),
+          SizedBox(
+            height: 20,
+          ),
           Wrap(
             spacing: 5,
             crossAxisAlignment: WrapCrossAlignment.center,
@@ -99,32 +103,110 @@ class ChatMessages extends StatelessWidget {
           )
         ],
       );
-    }
-    else if(result.contains("[line]"))
-      {
-        List<String> results=result.split("[line]");
-        List<String> results2=results[1].split("#");
-        return Column(
-          children: <Widget>[
-            Text(results[0],textAlign: TextAlign.left,),
-            new Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              mainAxisAlignment: MainAxisAlignment.start,
-              children: results2.map((e) => new Text("- "+e,textAlign: TextAlign.left,)).toList(),),
-          ],
-        );
-      }
-    else if(result.contains("[separator]")) {
+    } else if (result.contains('[next]')) {
+      List<String> results = result.split("[next]");
+      String description = results[0];
+      List<String> choices = results[1].split("\n").sublist(1);
+      return new Column(
+        children: <Widget>[
+          description.contains("[line]")
+              ? Column(
+                  children: <Widget>[
+                    Text(
+                      description.split("[line]")[0],
+                      textAlign: TextAlign.left,
+                    ),
+                    new Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      children: description
+                          .split("[line]")[1]
+                          .split("#")
+                          .sublist(1)
+                          .map((e) => new Text(
+                                "- " + e,
+                                textAlign: TextAlign.left,
+                              ))
+                          .toList(),
+                    ),
+                  ],
+                )
+              : Text(description),
+          Wrap(
+            spacing: 5,
+            crossAxisAlignment: WrapCrossAlignment.center,
+            alignment: WrapAlignment.center,
+            children: choices
+                .map((e) => GestureDetector(
+                    onTap: () {
+                      GetIt.I<HomeScreenState>().submitQuery(e);
+                    },
+                    child: Chip(
+                      backgroundColor: appColor,
+                      label: Text(
+                        e,
+                        style: TextStyle(color: Colors.white),
+                      ),
+                    )))
+                .toList(),
+          )
+        ],
+      );
+    } else if (result.contains("[line]")) {
+      List<String> results = result.split("[line]");
+      List<String> results2 = results[1].split("#");
+      return Column(
+        children: <Widget>[
+          Text(
+            results[0],
+            textAlign: TextAlign.left,
+          ),
+          new Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            mainAxisAlignment: MainAxisAlignment.start,
+            children: results2
+                .map((e) => new Text(
+                      "- " + e,
+                      textAlign: TextAlign.left,
+                    ))
+                .toList(),
+          ),
+        ],
+      );
+    } else if (result.contains("[separator]")) {
       result = result.substring(12);
-      List<String> results=result.split("#");
+      List<String> results = result.split("#");
       return new Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         mainAxisAlignment: MainAxisAlignment.start,
-        children: results.map((e) => new Text("- "+e,textAlign: TextAlign.left,)).toList(),);
-    }
-    else {
+        children: results
+            .map((e) => new Text(
+                  "- " + e,
+                  textAlign: TextAlign.left,
+                ))
+            .toList(),
+      );
+    } else {
       return Text(result);
     }
+  }
+
+  openDialogue(context, imgUrl) {
+    showDialog(
+        context: context,
+        builder: (BuildContext context) {
+          return RotatedBox(
+              quarterTurns: 1,
+              child: Container(
+                width: MediaQuery.of(context).size.width,
+                height: MediaQuery.of(context).size.height,
+                child: CachedNetworkImage(
+                  imageUrl: imgUrl,
+                  placeholder: (context, url) => CircularProgressIndicator(),
+                  errorWidget: (context, url, error) => Icon(Icons.error),
+                ),
+              ));
+        });
   }
 
   List<Widget> userMessage(context) {
@@ -150,7 +232,10 @@ class ChatMessages extends StatelessWidget {
       Container(
         margin: const EdgeInsets.only(left: 10.0),
         child: CircleAvatar(
-          child: Icon(Icons.account_circle,size: 30,),
+          child: Icon(
+            Icons.account_circle,
+            size: 30,
+          ),
           backgroundColor: appColor,
           radius: 20,
         ),

@@ -5,13 +5,24 @@
       <config />
     </shared>
   </component>
+  <component name="BranchesTreeState">
+    <expand />
+    <select />
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="500ebd9b-3086-43c8-911a-97fa6812558c" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/assets/login_back.jpg" afterDir="false" />
+    <list default="true" id="500ebd9b-3086-43c8-911a-97fa6812558c" name="Default Changelist" comment="idk what i fixed">
+      <change afterPath="$PROJECT_DIR$/.flutter-plugins" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.flutter-plugins-dependencies" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/iit-view.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/libraries/Dart_Packages.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Dart_Packages.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Flutter_Plugins.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Flutter_Plugins.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.packages" beforeDir="false" afterPath="$PROJECT_DIR$/.packages" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/chat_bot.iml" beforeDir="false" afterPath="$PROJECT_DIR$/chat_bot.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/chat_messages.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/chat_messages.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/home_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/home_screen.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/utils/const.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/utils/const.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pubspec.lock" beforeDir="false" afterPath="$PROJECT_DIR$/pubspec.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pubspec.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/pubspec.yaml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -36,19 +47,22 @@
     <option name="UPDATE_TYPE" value="REBASE" />
   </component>
   <component name="ProjectId" id="1XrICLqzfvTxMNzueet0b1wpFNN" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
-    <option name="showExcludedFiles" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="android.sdk.path" value="$USER_HOME$/AppData/Local/Android/Sdk" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="dart.analysis.tool.window.force.activate" value="false" />
+    <property name="dart.analysis.tool.window.visible" value="false" />
     <property name="io.flutter.reload.alreadyRun" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/assets" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
@@ -92,6 +106,7 @@
       <workItem from="1587934508311" duration="413000" />
       <workItem from="1588970144011" duration="2598000" />
       <workItem from="1589149000982" duration="3637000" />
+      <workItem from="1589320060922" duration="5935000" />
     </task>
     <task id="LOCAL-00001" summary="init">
       <created>1581762625028</created>
@@ -118,22 +133,22 @@
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="1" />
+    <option name="version" value="2" />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
       <map>
         <entry key="MAIN">
           <value>
-            <State>
-              <option name="COLUMN_ORDER" />
-            </State>
+            <State />
           </value>
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="init" />
     <MESSAGE value="home screen and dialogue flow" />
     <MESSAGE value="json file" />
@@ -157,22 +172,30 @@
     </state>
     <state x="488" y="141" key="FileChooserDialogImpl/0.0.1366.738@0.0.1366.738" timestamp="1587248130609" />
     <state x="549" y="159" key="FileChooserDialogImpl/0.0.1536.834/1920.0.1536.834@0.0.1536.834" timestamp="1587242712012" />
-    <state width="1323" height="182" key="GridCell.Tab.0.bottom" timestamp="1589156173588">
-      <screen x="0" y="0" width="1366" height="738" />
+    <state width="1493" height="213" key="GridCell.Tab.0.bottom" timestamp="1589326313298">
+      <screen x="0" y="0" width="1536" height="834" />
     </state>
     <state width="1323" height="182" key="GridCell.Tab.0.bottom/0.0.1366.738@0.0.1366.738" timestamp="1589156173588" />
-    <state width="1323" height="182" key="GridCell.Tab.0.center" timestamp="1589156173588">
-      <screen x="0" y="0" width="1366" height="738" />
+    <state width="1493" height="213" key="GridCell.Tab.0.bottom/0.0.1536.834/1920.145.1536.834@0.0.1536.834" timestamp="1589326313298" />
+    <state width="1493" height="213" key="GridCell.Tab.0.bottom/0.0.1536.834/1920.145.1536.834@1920.145.1536.834" timestamp="1589157111528" />
+    <state width="1493" height="213" key="GridCell.Tab.0.center" timestamp="1589326313298">
+      <screen x="0" y="0" width="1536" height="834" />
     </state>
     <state width="1323" height="182" key="GridCell.Tab.0.center/0.0.1366.738@0.0.1366.738" timestamp="1589156173588" />
-    <state width="1323" height="182" key="GridCell.Tab.0.left" timestamp="1589156173588">
-      <screen x="0" y="0" width="1366" height="738" />
+    <state width="1493" height="213" key="GridCell.Tab.0.center/0.0.1536.834/1920.145.1536.834@0.0.1536.834" timestamp="1589326313298" />
+    <state width="1493" height="213" key="GridCell.Tab.0.center/0.0.1536.834/1920.145.1536.834@1920.145.1536.834" timestamp="1589157111527" />
+    <state width="1493" height="213" key="GridCell.Tab.0.left" timestamp="1589326313298">
+      <screen x="0" y="0" width="1536" height="834" />
     </state>
     <state width="1323" height="182" key="GridCell.Tab.0.left/0.0.1366.738@0.0.1366.738" timestamp="1589156173588" />
-    <state width="1323" height="182" key="GridCell.Tab.0.right" timestamp="1589156173588">
-      <screen x="0" y="0" width="1366" height="738" />
+    <state width="1493" height="213" key="GridCell.Tab.0.left/0.0.1536.834/1920.145.1536.834@0.0.1536.834" timestamp="1589326313298" />
+    <state width="1493" height="213" key="GridCell.Tab.0.left/0.0.1536.834/1920.145.1536.834@1920.145.1536.834" timestamp="1589157111527" />
+    <state width="1493" height="213" key="GridCell.Tab.0.right" timestamp="1589326313298">
+      <screen x="0" y="0" width="1536" height="834" />
     </state>
     <state width="1323" height="182" key="GridCell.Tab.0.right/0.0.1366.738@0.0.1366.738" timestamp="1589156173588" />
+    <state width="1493" height="213" key="GridCell.Tab.0.right/0.0.1536.834/1920.145.1536.834@0.0.1536.834" timestamp="1589326313298" />
+    <state width="1493" height="213" key="GridCell.Tab.0.right/0.0.1536.834/1920.145.1536.834@1920.145.1536.834" timestamp="1589157111527" />
     <state x="263" y="104" key="IDE.errors.dialog" timestamp="1587254157951">
       <screen x="0" y="0" width="1366" height="738" />
     </state>

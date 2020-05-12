@@ -7,6 +7,7 @@ import 'package:flutter_dialogflow/dialogflow_v2.dart';
 import 'package:get_it/get_it.dart';
 import 'package:intl/intl.dart';
 import 'chat_messages.dart';
+import 'iit-view.dart';
 
 class HomeScreen extends StatefulWidget {
   HomeScreen({Key key}) : super(key: key);
@@ -16,6 +17,7 @@ class HomeScreen extends StatefulWidget {
 }
 
 class HomeScreenState extends State<HomeScreen> {
+  FocusNode inputNode=new FocusNode();
   final List<ChatMessages> messageList = <ChatMessages>[];
   final TextEditingController _textController = new TextEditingController();
   ScrollController _scrollController = new ScrollController();
@@ -35,6 +37,7 @@ class HomeScreenState extends State<HomeScreen> {
             children: <Widget>[
               Flexible(
                 child: TextField(
+                  focusNode: inputNode,
                   controller: _textController,
                   onSubmitted: submitQuery,
                   style: TextStyle(color: Colors.white),
@@ -66,19 +69,24 @@ class HomeScreenState extends State<HomeScreen> {
     Dialogflow dialogFlow =
         Dialogflow(authGoogle: authGoogle, language: localLanguage);
     AIResponse response = await dialogFlow.detectIntent(query);
-    ChatMessages message = ChatMessages(
-      text: response.getMessage() ??
-          CardDialogflow(response.getListMessage()[0].title),
-      name: "Flutter",
-      type: false,
-    );
-    setState(() {
-      messageList.insert(0, message);
-    });
+    if (response.getMessage().contains("[web]")) {
+      Navigator.of(context).push(new MaterialPageRoute(builder: (_) => new IITView()));
+    } else {
+      ChatMessages message = ChatMessages(
+        text: response.getMessage() ??
+            CardDialogflow(response.getListMessage()[0].title),
+        name: "Flutter",
+        type: false,
+      );
+      setState(() {
+        messageList.insert(0, message);
+      });
+    }
   }
 
   void submitQuery(String text) {
     if (text != "") {
+
       _scrollController.animateTo(
         0.0,
         curve: Curves.easeOut,
@@ -92,6 +100,7 @@ class HomeScreenState extends State<HomeScreen> {
       );
       setState(() {
         messageList.insert(0, message);
+        inputNode.unfocus();
       });
       agentResponse(text);
     }
