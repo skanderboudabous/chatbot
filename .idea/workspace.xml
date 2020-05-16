@@ -10,18 +10,20 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="500ebd9b-3086-43c8-911a-97fa6812558c" name="Default Changelist" comment="idk what i fixed">
-      <change afterPath="$PROJECT_DIR$/.flutter-plugins" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.flutter-plugins-dependencies" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/iit-view.dart" afterDir="false" />
+    <list default="true" id="500ebd9b-3086-43c8-911a-97fa6812558c" name="Default Changelist" comment="added image view and dialog for zoom picture , easy_web_view">
+      <change afterPath="$PROJECT_DIR$/assets/strings/en_US.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/strings/fr.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/internationalization.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.flutter-plugins" beforeDir="false" afterPath="$PROJECT_DIR$/.flutter-plugins" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.flutter-plugins-dependencies" beforeDir="false" afterPath="$PROJECT_DIR$/.flutter-plugins-dependencies" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/libraries/Dart_Packages.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Dart_Packages.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/libraries/Flutter_Plugins.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Flutter_Plugins.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.packages" beforeDir="false" afterPath="$PROJECT_DIR$/.packages" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/chat_bot.iml" beforeDir="false" afterPath="$PROJECT_DIR$/chat_bot.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/chat_messages.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/chat_messages.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/android/app/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/android/app/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/android/app/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/android/app/src/main/AndroidManifest.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/home_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/home_screen.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/utils/const.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/utils/const.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/main.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/main.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pubspec.lock" beforeDir="false" afterPath="$PROJECT_DIR$/pubspec.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pubspec.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/pubspec.yaml" afterDir="false" />
     </list>
@@ -75,6 +77,8 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\FlutterProjects\ChatBot\assets" />
+      <recent name="E:\FlutterProjects\ChatBot" />
       <recent name="D:\2emeGLID\chatbot\assets" />
       <recent name="D:\2emeGLID\chatbot\android\app\src\main\res" />
       <recent name="E:\FlutterProjects\ChatBot\lib" />
@@ -106,7 +110,8 @@
       <workItem from="1587934508311" duration="413000" />
       <workItem from="1588970144011" duration="2598000" />
       <workItem from="1589149000982" duration="3637000" />
-      <workItem from="1589320060922" duration="5935000" />
+      <workItem from="1589320060922" duration="6075000" />
+      <workItem from="1589595114859" duration="4128000" />
     </task>
     <task id="LOCAL-00001" summary="init">
       <created>1581762625028</created>
@@ -129,7 +134,14 @@
       <option name="project" value="LOCAL" />
       <updated>1583614968092</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="added image view and dialog for zoom picture , easy_web_view">
+      <created>1589326635331</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1589326635331</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -152,7 +164,8 @@
     <MESSAGE value="init" />
     <MESSAGE value="home screen and dialogue flow" />
     <MESSAGE value="json file" />
-    <option name="LAST_COMMIT_MESSAGE" value="json file" />
+    <MESSAGE value="added image view and dialog for zoom picture , easy_web_view" />
+    <option name="LAST_COMMIT_MESSAGE" value="added image view and dialog for zoom picture , easy_web_view" />
   </component>
   <component name="WindowStateProjectService">
     <state x="137" y="24" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1587247870767">
@@ -172,29 +185,29 @@
     </state>
     <state x="488" y="141" key="FileChooserDialogImpl/0.0.1366.738@0.0.1366.738" timestamp="1587248130609" />
     <state x="549" y="159" key="FileChooserDialogImpl/0.0.1536.834/1920.0.1536.834@0.0.1536.834" timestamp="1587242712012" />
-    <state width="1493" height="213" key="GridCell.Tab.0.bottom" timestamp="1589326313298">
+    <state width="1493" height="213" key="GridCell.Tab.0.bottom" timestamp="1589599114211">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
     <state width="1323" height="182" key="GridCell.Tab.0.bottom/0.0.1366.738@0.0.1366.738" timestamp="1589156173588" />
-    <state width="1493" height="213" key="GridCell.Tab.0.bottom/0.0.1536.834/1920.145.1536.834@0.0.1536.834" timestamp="1589326313298" />
+    <state width="1493" height="213" key="GridCell.Tab.0.bottom/0.0.1536.834/1920.145.1536.834@0.0.1536.834" timestamp="1589599114211" />
     <state width="1493" height="213" key="GridCell.Tab.0.bottom/0.0.1536.834/1920.145.1536.834@1920.145.1536.834" timestamp="1589157111528" />
-    <state width="1493" height="213" key="GridCell.Tab.0.center" timestamp="1589326313298">
+    <state width="1493" height="213" key="GridCell.Tab.0.center" timestamp="1589599114211">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
     <state width="1323" height="182" key="GridCell.Tab.0.center/0.0.1366.738@0.0.1366.738" timestamp="1589156173588" />
-    <state width="1493" height="213" key="GridCell.Tab.0.center/0.0.1536.834/1920.145.1536.834@0.0.1536.834" timestamp="1589326313298" />
+    <state width="1493" height="213" key="GridCell.Tab.0.center/0.0.1536.834/1920.145.1536.834@0.0.1536.834" timestamp="1589599114211" />
     <state width="1493" height="213" key="GridCell.Tab.0.center/0.0.1536.834/1920.145.1536.834@1920.145.1536.834" timestamp="1589157111527" />
-    <state width="1493" height="213" key="GridCell.Tab.0.left" timestamp="1589326313298">
+    <state width="1493" height="213" key="GridCell.Tab.0.left" timestamp="1589599114211">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
     <state width="1323" height="182" key="GridCell.Tab.0.left/0.0.1366.738@0.0.1366.738" timestamp="1589156173588" />
-    <state width="1493" height="213" key="GridCell.Tab.0.left/0.0.1536.834/1920.145.1536.834@0.0.1536.834" timestamp="1589326313298" />
+    <state width="1493" height="213" key="GridCell.Tab.0.left/0.0.1536.834/1920.145.1536.834@0.0.1536.834" timestamp="1589599114211" />
     <state width="1493" height="213" key="GridCell.Tab.0.left/0.0.1536.834/1920.145.1536.834@1920.145.1536.834" timestamp="1589157111527" />
-    <state width="1493" height="213" key="GridCell.Tab.0.right" timestamp="1589326313298">
+    <state width="1493" height="213" key="GridCell.Tab.0.right" timestamp="1589599114211">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
     <state width="1323" height="182" key="GridCell.Tab.0.right/0.0.1366.738@0.0.1366.738" timestamp="1589156173588" />
-    <state width="1493" height="213" key="GridCell.Tab.0.right/0.0.1536.834/1920.145.1536.834@0.0.1536.834" timestamp="1589326313298" />
+    <state width="1493" height="213" key="GridCell.Tab.0.right/0.0.1536.834/1920.145.1536.834@0.0.1536.834" timestamp="1589599114211" />
     <state width="1493" height="213" key="GridCell.Tab.0.right/0.0.1536.834/1920.145.1536.834@1920.145.1536.834" timestamp="1589157111527" />
     <state x="263" y="104" key="IDE.errors.dialog" timestamp="1587254157951">
       <screen x="0" y="0" width="1366" height="738" />
@@ -209,13 +222,18 @@
     </state>
     <state x="246" y="0" key="SettingsEditor/0.0.1366.738@0.0.1366.738" timestamp="1587248136460" />
     <state x="277" y="60" key="SettingsEditor/0.0.1536.834/1920.0.1536.834@0.0.1536.834" timestamp="1587244376827" />
-    <state x="361" y="150" key="Vcs.Push.Dialog.v2" timestamp="1587242801490">
+    <state x="361" y="150" key="Vcs.Push.Dialog.v2" timestamp="1589326653232">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
     <state x="361" y="150" key="Vcs.Push.Dialog.v2/0.0.1536.834/1920.0.1536.834@0.0.1536.834" timestamp="1587242801490" />
+    <state x="361" y="150" key="Vcs.Push.Dialog.v2/0.0.1536.834/1920.145.1536.834@0.0.1536.834" timestamp="1589326653232" />
     <state x="492" y="286" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1589155633235">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
     <state x="492" y="286" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1366.738@0.0.1366.738" timestamp="1589155633235" />
+    <state x="425" y="189" key="run.anything.popup" timestamp="1589595989717">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state x="425" y="189" key="run.anything.popup/0.0.1536.834/1920.145.1536.834@0.0.1536.834" timestamp="1589595989717" />
   </component>
 </project>

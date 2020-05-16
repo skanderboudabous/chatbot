@@ -1,13 +1,14 @@
-import 'dart:convert';
-
 import 'package:ChatBot/utils/const.dart';
 import 'package:ChatBot/utils/styles.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_dialogflow/dialogflow_v2.dart';
 import 'package:get_it/get_it.dart';
-import 'package:intl/intl.dart';
+import 'package:internationalization/internationalization.dart';
+import 'package:speech_to_text/speech_recognition_error.dart';
+import 'package:speech_to_text/speech_recognition_result.dart';
 import 'chat_messages.dart';
 import 'iit-view.dart';
+import 'package:speech_to_text/speech_to_text.dart' as stt;
 
 class HomeScreen extends StatefulWidget {
   HomeScreen({Key key}) : super(key: key);
@@ -17,10 +18,20 @@ class HomeScreen extends StatefulWidget {
 }
 
 class HomeScreenState extends State<HomeScreen> {
-  FocusNode inputNode=new FocusNode();
+  FocusNode inputNode = new FocusNode();
   final List<ChatMessages> messageList = <ChatMessages>[];
   final TextEditingController _textController = new TextEditingController();
   ScrollController _scrollController = new ScrollController();
+
+  stt.SpeechToText speech = stt.SpeechToText();
+
+  List<String> choices = [
+    "Cycles",
+    "Information",
+    "Fees",
+    "Pre-register",
+    "Contact"
+  ];
   String localLanguage;
 
   Widget _queryInputWidget(BuildContext context) {
@@ -42,19 +53,24 @@ class HomeScreenState extends State<HomeScreen> {
                   onSubmitted: submitQuery,
                   style: TextStyle(color: Colors.white),
                   decoration: InputDecoration.collapsed(
-                      hintText: "Send a message",
+                      hintText: Strings.of(context).valueOf("SendMsg"),
                       hintStyle: TextStyle(color: Colors.white)),
                 ),
               ),
-              Container(
-                margin: EdgeInsets.symmetric(horizontal: 4.0),
-                child: IconButton(
-                    icon: Icon(
-                      Icons.send,
-                      color: Colors.lightGreenAccent,
-                    ),
-                    onPressed: () => submitQuery(_textController.text)),
-              ),
+              IconButton(
+                  icon: Icon(
+                    Icons.send,
+                    color: Colors.lightGreenAccent,
+                  ),
+                  onPressed: () => submitQuery(_textController.text)),
+              IconButton(
+                  icon: Icon(
+                    Icons.mic,
+                    color: Colors.lightGreenAccent,
+                  ),
+                  onPressed: () {
+                    speech.listen(onResult: resultListener);
+                  }),
             ],
           ),
         ),
@@ -70,7 +86,8 @@ class HomeScreenState extends State<HomeScreen> {
         Dialogflow(authGoogle: authGoogle, language: localLanguage);
     AIResponse response = await dialogFlow.detectIntent(query);
     if (response.getMessage().contains("[web]")) {
-      Navigator.of(context).push(new MaterialPageRoute(builder: (_) => new IITView()));
+      Navigator.of(context)
+          .push(new MaterialPageRoute(builder: (_) => new IITView()));
     } else {
       ChatMessages message = ChatMessages(
         text: response.getMessage() ??
@@ -86,7 +103,6 @@ class HomeScreenState extends State<HomeScreen> {
 
   void submitQuery(String text) {
     if (text != "") {
-
       _scrollController.animateTo(
         0.0,
         curve: Curves.easeOut,
@@ -112,6 +128,17 @@ class HomeScreenState extends State<HomeScreen> {
     super.initState();
     if (!GetIt.I.isRegistered<HomeScreenState>())
       GetIt.I.registerSingleton<HomeScreenState>(this);
+    getSpeechToText();
+  }
+
+  void getSpeechToText() async {
+    bool available = await speech.initialize(
+        onStatus: statusListener, onError: errorListener);
+    if (available) {
+     print("available");
+    } else {
+      print("The user has denied the use of speech recognition.");
+    }
   }
 
   @override
@@ -136,6 +163,27 @@ class HomeScreenState extends State<HomeScreen> {
             color: Colors.black87,
           ),
           Column(children: <Widget>[
+            Align(
+              alignment: Alignment.topCenter,
+              child: Wrap(
+                spacing: 5,
+                crossAxisAlignment: WrapCrossAlignment.center,
+                alignment: WrapAlignment.center,
+                children: choices
+                    .map((e) => GestureDetector(
+                        onTap: () {
+                          submitQuery(e);
+                        },
+                        child: Chip(
+                          backgroundColor: appColor,
+                          label: Text(
+                            Strings.of(context).valueOf(e),
+                            style: TextStyle(color: Colors.white),
+                          ),
+                        )))
+                    .toList(),
+              ),
+            ),
             new Flexible(
                 child: ListView.builder(
               controller: _scrollController,
@@ -150,5 +198,17 @@ class HomeScreenState extends State<HomeScreen> {
         ],
       ),
     );
+  }
+
+  void statusListener(String status) => print(status);
+
+  void errorListener(SpeechRecognitionError errorNotification) =>
+      print(errorNotification);
+
+  void resultListener(SpeechRecognitionResult result) {
+    if (result.finalResult) {
+      print(result.recognizedWords);
+      submitQuery(result.recognizedWords);
+    }
   }
 }
