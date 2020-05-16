@@ -1,3 +1,4 @@
+import 'package:ChatBot/about_us.dart';
 import 'package:ChatBot/utils/const.dart';
 import 'package:ChatBot/utils/styles.dart';
 import 'package:flutter/material.dart';
@@ -151,6 +152,11 @@ class HomeScreenState extends State<HomeScreen> {
         title: Text(TITLE, style: TextStyle(color: Colors.white)),
         backgroundColor: appColor,
         elevation: 0,
+        actions: <Widget>[
+          IconButton(icon: Icon(Icons.info_outline),onPressed: (){
+            Navigator.of(context).push(new MaterialPageRoute(builder:(_)=> new AboutUs()));
+          },)
+        ],
       ),
       body: Stack(
         alignment: Alignment.topCenter,
@@ -200,15 +206,21 @@ class HomeScreenState extends State<HomeScreen> {
     );
   }
 
-  void statusListener(String status) => print(status);
+  void statusListener(String status) {
+   print("Status");
+   print(status);
+  }
 
-  void errorListener(SpeechRecognitionError errorNotification) =>
-      print(errorNotification);
+  void errorListener(SpeechRecognitionError errorNotification) {
+    print("Error");
+    print(errorNotification);
+  }
 
   void resultListener(SpeechRecognitionResult result) {
     if (result.finalResult) {
       print(result.recognizedWords);
       submitQuery(result.recognizedWords);
+      speech.stop();
     }
   }
 }

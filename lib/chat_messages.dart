@@ -1,9 +1,13 @@
 import 'package:ChatBot/home_screen.dart';
+import 'package:ChatBot/map.dart';
 import 'package:ChatBot/utils/styles.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:get_it/get_it.dart';
+import 'package:google_maps_flutter/google_maps_flutter.dart';
+import 'package:internationalization/internationalization.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class ChatMessages extends StatelessWidget {
   ChatMessages({this.text, this.name, this.type});
@@ -186,9 +190,78 @@ class ChatMessages extends StatelessWidget {
                 ))
             .toList(),
       );
+    } else if (result.contains("[map]")) {
+      return Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: <Widget>[
+          Text(Strings.of(context).valueOf("Map")),
+          new IconButton(
+            icon: Icon(
+              Icons.location_on,
+              size: 35,
+              color: Colors.red,
+            ),
+            onPressed: () {
+              openMap(context);
+            },
+          )
+        ],
+      );
+    } else if (result.contains("[email]")) {
+      return Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: <Widget>[
+          Text("info@iit.tn"),
+          IconButton(
+            icon: Icon(Icons.mail_outline),
+            color: Colors.red,
+            onPressed: () async {
+              const email = 'mailto:info@iit.tn';
+              if (await canLaunch(email)) {
+                await launch(email);
+              }
+            },
+          )
+        ],
+      );
+    } else if (result.contains("[phone]")) {
+      return Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: <Widget>[
+          Text("(+216) 74 46 50 20"),
+          IconButton(
+            icon: Icon(
+              Icons.phone,
+              size: 35,
+              color: Colors.green,
+            ),
+            onPressed: () async {
+              const phone = 'tel:74 46 50 20';
+              if (await canLaunch(phone)) {
+                await launch(phone);
+              }
+            },
+          ),
+        ],
+      );
     } else {
       return Text(result);
     }
+  }
+
+  void openMap(BuildContext context) {
+    showDialog(
+        context: context,
+        builder: (BuildContext context) {
+          return Padding(
+            padding: const EdgeInsets.all(20.0),
+            child: Container(
+              child: new Map(
+                iit: new LatLng(34.7288394, 10.7373393),
+              ),
+            ),
+          );
+        });
   }
 
   openDialogue(context, imgUrl) {

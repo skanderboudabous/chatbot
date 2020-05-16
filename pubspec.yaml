@@ -14,7 +14,7 @@ description: A new Flutter project.
 version: 1.0.0+1
 
 environment:
-  sdk: ">=2.1.0 <3.0.0"
+  sdk: ">=2.2.0 <3.0.0"
 dependency_overrides:
   intl: ^0.16.0
 dependencies:
@@ -33,6 +33,10 @@ dependencies:
   cached_network_image: ^2.2.0+1
   internationalization: ^2.0.0
   speech_to_text: ^2.1.0
+  google_maps_flutter: ^0.5.25+3
+  url_launcher: ^5.4.2
+
+
 
 dev_dependencies:
   flutter_test:
