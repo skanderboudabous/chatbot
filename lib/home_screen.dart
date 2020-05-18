@@ -178,7 +178,7 @@ class HomeScreenState extends State<HomeScreen> {
                 children: choices
                     .map((e) => GestureDetector(
                         onTap: () {
-                          submitQuery(e);
+                          submitQuery(Strings.of(context).valueOf(e));
                         },
                         child: Chip(
                           backgroundColor: appColor,

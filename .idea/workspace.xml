@@ -10,14 +10,7 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="500ebd9b-3086-43c8-911a-97fa6812558c" name="Default Changelist" comment="added about us , phone , email , map">
-      <change beforePath="$PROJECT_DIR$/.flutter-plugins-dependencies" beforeDir="false" afterPath="$PROJECT_DIR$/.flutter-plugins-dependencies" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/strings/en_US.json" beforeDir="false" afterPath="$PROJECT_DIR$/assets/strings/en_US.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/strings/fr.json" beforeDir="false" afterPath="$PROJECT_DIR$/assets/strings/fr.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/iit-view.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/iit-view.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/utils/const.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/utils/const.dart" afterDir="false" />
-    </list>
+    <list default="true" id="500ebd9b-3086-43c8-911a-97fa6812558c" name="Default Changelist" comment="fixed pre-register multi language link" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -104,7 +97,7 @@
       <workItem from="1589320060922" duration="6075000" />
       <workItem from="1589595114859" duration="4149000" />
       <workItem from="1589660685011" duration="7745000" />
-      <workItem from="1589759494901" duration="176000" />
+      <workItem from="1589759494901" duration="233000" />
     </task>
     <task id="LOCAL-00001" summary="init">
       <created>1581762625028</created>
@@ -148,7 +141,14 @@
       <option name="project" value="LOCAL" />
       <updated>1589670138552</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="fixed pre-register multi language link">
+      <created>1589759690539</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1589759690539</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -174,7 +174,8 @@
     <MESSAGE value="added image view and dialog for zoom picture , easy_web_view" />
     <MESSAGE value="added shortcuts and multi language and speech to text" />
     <MESSAGE value="added about us , phone , email , map" />
-    <option name="LAST_COMMIT_MESSAGE" value="added about us , phone , email , map" />
+    <MESSAGE value="fixed pre-register multi language link" />
+    <option name="LAST_COMMIT_MESSAGE" value="fixed pre-register multi language link" />
   </component>
   <component name="WindowStateProjectService">
     <state x="137" y="24" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1587247870767">
@@ -231,11 +232,11 @@
     </state>
     <state x="246" y="0" key="SettingsEditor/0.0.1366.738@0.0.1366.738" timestamp="1587248136460" />
     <state x="277" y="60" key="SettingsEditor/0.0.1536.834/1920.0.1536.834@0.0.1536.834" timestamp="1587244376827" />
-    <state x="361" y="150" key="Vcs.Push.Dialog.v2" timestamp="1589670145541">
+    <state x="361" y="150" key="Vcs.Push.Dialog.v2" timestamp="1589759702330">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
     <state x="361" y="150" key="Vcs.Push.Dialog.v2/0.0.1536.834/1920.0.1536.834@0.0.1536.834" timestamp="1587242801490" />
-    <state x="361" y="150" key="Vcs.Push.Dialog.v2/0.0.1536.834/1920.145.1536.834@0.0.1536.834" timestamp="1589670145541" />
+    <state x="361" y="150" key="Vcs.Push.Dialog.v2/0.0.1536.834/1920.145.1536.834@0.0.1536.834" timestamp="1589759702330" />
     <state x="492" y="286" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1589155633235">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
